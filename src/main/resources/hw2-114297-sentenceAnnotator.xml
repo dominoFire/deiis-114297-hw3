@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>  <annotatorImplementationName>edu.cmu.deiis.hw2.annotators.SentenceAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>hw2-1144297-sentenceAnnotator</name>
+    <description>An annotator that creates sentences and verifies if either are a question or an answer.</description>
+    <version>1.0</version>
+    <vendor>Fernando Aguilar</vendor>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <typeSystemDescription>
+      <imports>
+        <import location="descriptors/deiis_types.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

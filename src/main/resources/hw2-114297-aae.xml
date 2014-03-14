@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="hw2-114297-sentenceAnnotator">
+      <import location="hw2-114297-sentenceAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="hw2-114297-tokenAnnotator">
+      <import location="hw2-114297-tokenAnnotator.xml"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="hw2-114297-ngramAnnotator">
+      <import location="hw2-114297-ngramAnnotator.xml"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="hw2-114297-answerScoringAnnotator">
+      <import location="hw2-114297-answerScoringAnnotator.xml"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="hw2-114297-evaluatorAnnotator">
+      <import location="hw2-114297-evaluatorAnnotator.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>hw2-114297-aae</name>
+    <description>Main Pipeline</description>
+    <version>1.0</version>
+    <vendor>Fernando Aguilar</vendor>
+    <configurationParameters searchStrategy="language_fallback">
+      <configurationParameter>
+        <name>N</name>
+        <description>Level of precision@N metric</description>
+        <type>Integer</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+        <overrides>
+          <parameter>hw2-114297-evaluatorAnnotator/N</parameter>
+        </overrides>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>N</name>
+        <value>
+          <integer>3</integer>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <flowConstraints>
+      <fixedFlow>
+        <node>hw2-114297-sentenceAnnotator</node>
+        <node>hw2-114297-tokenAnnotator</node>
+      <node>hw2-114297-ngramAnnotator</node>
+      <node>hw2-114297-answerScoringAnnotator</node>
+      <node>hw2-114297-evaluatorAnnotator</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Token</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.NGram</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.AnswerScore</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Token</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.NGram</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.AnswerScore</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
