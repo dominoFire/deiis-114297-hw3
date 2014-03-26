@@ -28,7 +28,7 @@ public class EvaluatorX extends CasConsumer_ImplBase {
 		AnswerScore as = null;
 		while(it.hasNext()) {
 			as = (AnswerScore)it.next();
-			System.out.println("AnswerScore: " +as.getScore());
+			System.out.println("AnswerScore@EvaluatorX: " +as.getScore());
 		}
 	}
 }

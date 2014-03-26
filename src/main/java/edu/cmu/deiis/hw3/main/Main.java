@@ -13,7 +13,7 @@ class Main {
 		//parse CPE descriptor in file specified on command line
 		CpeDescription cpeDesc = UIMAFramework.getXMLParser().
 		parseCpeDescription(new XMLInputSource(
-				"/home/perez/ITAM/DEIIS/workspace/hw3-114297/src/main/resources/descriptors/cpe.xml"
+			"/home/perez/ITAM/DEIIS/workspace/hw3-114297/src/main/resources/descriptors/cpe.xml"
 		));
 		//instantiate CPE
 		CollectionProcessingEngine mCPE = UIMAFramework.produceCollectionProcessingEngine(cpeDesc);
