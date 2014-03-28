@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cpeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <collectionReader>
+        <collectionIterator>
+            <descriptor>
+                <import location="descriptors/FileSystemCollectionReader.xml"/>
+            </descriptor>
+        </collectionIterator>
+    </collectionReader>
+    <casProcessors casPoolSize="2" processingUnitThreadCount="1">
+    <casProcessor deployment="integrated" name="hw2-114297-aae-client.xml">
+        <descriptor>
+            <import location="hw2-114297-aae-client.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="Homework 3 CAS Consumer">
+        <descriptor>
+            <import location="descriptors/casConsumer.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+        <configurationParameterSettings>
+            <nameValuePair>
+                <name>OutputDirectory</name>
+                <value>
+                    <string>/home/perez/ITAM/DEIIS/workspace/hw3-114297/src/main/resources/outputData</string>
+                </value>
+            </nameValuePair>
+        </configurationParameterSettings>
+    </casProcessor>
+    </casProcessors>
+    <cpeConfig>
+        <numToProcess>-1</numToProcess>
+        <deployAs>immediate</deployAs>
+        <checkpoint batch="0" time="300000ms"/>
+        <timerImpl/>
+    </cpeConfig>
+</cpeDescription>

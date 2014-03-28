@@ -3,14 +3,14 @@
 	<collectionReader>
 		<collectionIterator>
 			<descriptor>
-				<import location="FileSystemCollectionReader.xml" />
+				<import location="descriptors/FileSystemCollectionReader.xml" />
 			</descriptor>
 		</collectionIterator>
 	</collectionReader>
 	<casProcessors casPoolSize="2" processingUnitThreadCount="1">
 		<casProcessor deployment="integrated" name="hw2-114297-aae">
 			<descriptor>
-				<import location="../hw2-114297-aae.xml" />
+				<import location="hw2-114297-aae.xml" />
 			</descriptor>
 			<deploymentParameters />
 			<errorHandling>
@@ -38,7 +38,7 @@
 		 -->
 		<casProcessor deployment="integrated" name="Homework 3 CAS Consumer">
 			<descriptor>
-				<import location="casConsumer.xml" />
+				<import location="descriptors/casConsumer.xml" />
 			</descriptor>
 			<deploymentParameters />
 			<errorHandling>

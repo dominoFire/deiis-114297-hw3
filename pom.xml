@@ -24,10 +24,13 @@
 			<url>http://mu.lti.cs.cmu.edu:8081/nexus/content/groups/course</url>
 		</repository>
 	-->
+	<!--
 		<repository>
 			<id>JBOSS</id>
 			<url>https://repository.jboss.org/nexus/content/groups/fs-public/</url>
 		</repository>
+
+	-->
 	</repositories>
 	<!--
 	<distributionManagement>
